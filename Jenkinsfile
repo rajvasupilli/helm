@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                helm upgrade --install mynginx nginx
+                sh '''
+                    helm upgrade --install mynginx nginx
+                '''
             }
         }
     }
